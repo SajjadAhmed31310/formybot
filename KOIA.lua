@@ -6059,14 +6059,12 @@ local MsgId = msg.id/2097152/0.5
 local MSGID = string.gsub(MsgId,'.0','')
 https.request("https://api.telegram.org/bot"..Token..'/sendanimation?chat_id=' .. msg.chat_id .. '&animation=https://t.me/GifDavid/'..Abs..'&caption=' .. URL.escape(Text).."&reply_to_message_id="..MsgId.."&parse_mode=markdown") 
 end
-if text == "رميكس" or text == "ريماكس" then
-if not Redis:get(TheKOIA.."knele"..msg.chat_id) then
-Abs = math.random(4,2824); 
-local Text ='*✯︙تم اختيار المقطع رميكس لك*'
-keyboard = {}  
-keyboard.inline_keyboard = {{{text = '✯ 𝗦𝗼𝘂𝗿𝗰𝗲 𝗞𝗔𝗗𝗜.',url="t.me/IE7IE"}}} 
-local msg_id = msg.id/2097152/0.5 
-https.request("https://api.telegram.org/bot"..Token..'/sendVoice?chat_id=' .. msg.chat_id .. '&voice=https://t.me/RemixDavid/'..Abs..'&caption=' .. URL.escape(Text).."&reply_to_message_id="..msg_id.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard)) 
+if text == "ريمكس" or text == "ريماكس" then 
+Abs = math.random(2,140); 
+local Text ='*✯︙تم اختيار ريمكس لك*'
+local MsgId = msg.id/2097152/0.5
+local MSGID = string.gsub(MsgId,'.0','')
+https.request("https://api.telegram.org/bot"..Token..'/sendVoice?chat_id=' .. msg.chat_id .. '&voice=https://t.me/RemixDavid/'..Abs..'&caption=' .. URL.escape(Text).."&reply_to_message_id="..MsgId.."&parse_mode=markdown") 
 end
 end
 if text == "شعر" or text == "اشعار" then
